@@ -12,7 +12,7 @@ public class J1_hello {
 		 * println: 출력 메서드
 		 * ("hello"): 파라미터 내용을 출력
 		 * ; 명령의 끝 */
-		 
-	} 
+		
+	}
 
 }
