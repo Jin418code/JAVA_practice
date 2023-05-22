@@ -9,10 +9,11 @@ public class J99_Question2_ANS_for {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		
 		int ending = 3000;
 		int sum = 0;
 		int count = 0;
-
+		
 		for (;; count++) {
 			sum += count;
 			if (sum >= ending) {

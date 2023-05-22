@@ -13,8 +13,6 @@ class Sum {
 	public static void main(String[] args) {
 	
 		
-		while(num < 3000)
-		
 		
 		System.out.println("합계가 3000이 넘었습니다.");
 	}
