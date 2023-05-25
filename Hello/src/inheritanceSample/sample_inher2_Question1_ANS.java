@@ -21,52 +21,20 @@ import java.util.Scanner;
  * 나눗셈 나머지 : diver2();
 */
 
-class cal extends inputNum {
+class sample_inher2_Question1_ANS extends CalAdder {
 
-	public static int adder(int inputNum1, int inputNum2) {
-		int sum = inputNum1 + inputNum2;
-		return sum;
-	}
-
-	public static int suber(int inputNum1, int inputNum2) {
-		int sum = inputNum1 - inputNum2;
-		return sum;
-	}
-
-	public static int muler(int num1, int inputNum2) {
-		int sum = inputNum1 * inputNum2;
-		return sum;
-	}
-
-	public static int diver1(int inputNum1, int inputNum2) {
-		int sum = inputNum1 / inputNum2;
-		return sum;
-	}
-
-	public static int diver2(int inputNum1, int inputNum2) {
-		int sum = inputNum1 % inputNum2;
-		return sum;
-	}
-}
-
-class inputNum {
-
-	public static void inputNum() {
+	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-
 		System.out.println("첫번째 숫자를 입력하세요");
-		int inputNum1 = sc.nextInt();
-
+		int x = sc.nextInt();
 		System.out.println("두번째 숫자를 입력하세요");
-		int inputNum2 = sc.nextInt();
-	}
-	
-}
-
-public class sample_inher2 extends inputNum{
-
-	public static void main() {
-		inputNum();
+		int y = sc.nextInt();
+		
+		adder(x, y);
+		suber(x, y);
+		muler(x, y);
+		diver1(x, y);
+		diver2(x, y);
 		
 	}
 }
