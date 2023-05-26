@@ -5,7 +5,7 @@ abstract class Super1 {
 }
 
 // final class Super2 extends Super1 {  // [x] 이 코드 실행시 중간에 중단됨
-class Super2 extends Super1 {
+class Super55 extends Super1 {
 	void p(int x, double y) {
 		System.out.println("Super2 p() is called");
 	}
@@ -16,7 +16,7 @@ class Super2 extends Super1 {
 	}
 }
 
-class Super3 extends Super2 {
+class Super3 extends Super55 {
 	void p(int x, double y) {
 		System.out.println("Super3 p() is called");
 	}
