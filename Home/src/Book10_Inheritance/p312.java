@@ -16,6 +16,7 @@ class Student extends p312 {
 	
 	
 	int studentID;
+	int myID;
 	
 	
 	void goToSchool() {
