@@ -1,6 +1,6 @@
-package Book10_Inheritance;
+package Book;
 
-public class p312 {
+public class L10 {
 
 	String name = null;
 	int age = 0;
@@ -12,7 +12,7 @@ public class p312 {
 	}
 }
 
-class Student extends p312 {
+class Student extends L10 {
 	
 	
 	int studentID;
