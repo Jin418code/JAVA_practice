@@ -148,7 +148,7 @@ import java.util.Scanner;
 //}
 
 //========================================================================================
-//p245 [메서드의 가별 길이 배열 입력매개변수]
+//p245 [메서드의 가변 길이 배열 입력매개변수]
 
 //public class L7 {
 //	public static void main(String[] args) {
@@ -320,6 +320,7 @@ class B77 {
 
 public class L7 {
 	public static void main(String[] args) {
+		
 		// 3가지 객체 생성(this() 미사용)
 		A77 a1 = new A77();
 		A77 a2 = new A77(10);
