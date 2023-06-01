@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -5,9 +6,10 @@ import java.util.Scanner;
  * ? = (수식) ? 찹 : 거짓 
  * 
  */
-public class BOOK10_for {
+public class BOOK10_for_EXCEPTION {
 
 	public static void main(String[] args) {
+		try {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("반복 처리할 숫자를 입력해주세요.");
 		
@@ -19,7 +21,11 @@ public class BOOK10_for {
 		}
 		
 		System.out.println(i);
-		
+		} catch (InputMismatchException e) {
+			System.out.println("정수를 입력해주세요");
+		} finally { 
+			System.out.println("종료합니다");
+		}
 		/*
 		 * int i;
 		 * 

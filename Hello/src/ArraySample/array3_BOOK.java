@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class array3_BOOK {
 
 	public static void main(String args[]) {
-
+		try {
 		int value = 0;
 		System.out.println(value);
 		
@@ -47,6 +47,6 @@ public class array3_BOOK {
 		System.out.println(Arrays.toString(array2));  // [0, 0, 0]
 		System.out.println(Arrays.toString(array3));  // [0.0, 0.0, 0.0]
 		System.out.println(Arrays.toString(array4));  // [null, null, null]
-		
+		} catch (){
 	}
 }

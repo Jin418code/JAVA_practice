@@ -30,6 +30,7 @@ public class Overloading0 {
 		System.out.println("정수형 오버로딩 : " + sum1);
 		System.out.println("float형 오버로딩 : " + sum2);
 		System.out.println("double형 오버로딩 : " + sum3);
+		
 	}
 
 }

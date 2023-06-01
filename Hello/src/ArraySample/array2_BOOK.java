@@ -63,6 +63,6 @@ public class array2_BOOK {
 		int[] value4 = null;
 		System.out.println(value4);
 		System.out.println();
-
+		
 	}
 }

@@ -47,5 +47,5 @@ public class Super1_sample {
 		System.out.println("BBB reference : " + ccc2.num);  // BBB reference : 500
 		System.out.println("AAA reference : " + ccc3.num);  // AAA reference : 2500
 		System.out.println("AAA reference : " + ccc4.num);  // AAA reference : 2500
-	}  
+	}
 }
