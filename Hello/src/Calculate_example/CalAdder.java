@@ -1,4 +1,4 @@
-package inheritanceSample;
+package Calculate_example;
 
 public class CalAdder extends CalSuber {
 	

@@ -21,22 +21,25 @@ import java.util.Scanner;
  * 나눗셈 나머지 : diver2();
 */
 
-class sample_inher2_Question1_ANS2{
+public class sample_inher2_Question1_ANS_EXCEPTION extends CalAdder {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("첫번째 숫자를 입력하세요");
-		int x = sc.nextInt();
-		System.out.println("두번째 숫자를 입력하세요");
-		int y = sc.nextInt();
-		
-		// 클래스로부터 객체의 생성
-		CalAdder add = new CalAdder();
-		add.adder(x,y);
-		
-		CalAdder sub = new CalAdder();
-		add.suber(x,y);
-		
-		
+		try {
+			System.out.println("첫번째 숫자를 입력하세요");
+			int x = sc.nextInt();
+			System.out.println("두번째 숫자를 입력하세요");
+			int y = sc.nextInt();
+			
+			adder(x, y);
+			suber(x, y);
+			muler(x, y);
+			diver1(x, y);
+			diver2(x, y);
+		} catch (Exception e) {
+			System.out.println("올바른 숫자를 입력해주세요.");
+		} finally {
+			sc.close();
+		}
 	}
 }

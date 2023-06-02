@@ -1,4 +1,4 @@
-package method_sample;
+package xxxxxxxx_method_sample;
 
 import java.util.Scanner;
 
@@ -60,13 +60,11 @@ class inputNum {
 		System.out.println("두번째 숫자를 입력하세요");
 		int inputNum2 = sc.nextInt();
 	}
-	
 }
 
 public class sample_inher2_Question1_M extends inputNum{
 
 	public static void main() {
 		inputNum();
-		
 	}
 }

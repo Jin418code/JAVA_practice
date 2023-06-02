@@ -1,4 +1,4 @@
-package method_sample;
+package xxxxxxxx_method_sample;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  * - 해결하는 공식을 2가지 이상 적용해보세요.
 */
 
-class sample_inher3_Question2_Radius0{
+class sample_inher3_Question2_Radius1{
 	
 	public static double howRadius(double x) {
 		

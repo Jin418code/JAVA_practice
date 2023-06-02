@@ -34,7 +34,7 @@ class test222{
 	public static void main1() {
 
 		A111 mycar1 = new A111();
-		
+
 		System.out.println(mycar1.speed);
 	}
 

@@ -1,4 +1,4 @@
-package inheritanceSample;
+package Calculate_example;
 
 import java.util.Scanner;
 

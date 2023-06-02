@@ -1,4 +1,4 @@
-package inheritanceSample;
+package Calculate_example;
 
 public class CalMuler extends CalDiver1{
 	

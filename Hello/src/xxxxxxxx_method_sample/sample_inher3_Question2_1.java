@@ -1,4 +1,4 @@
-package method_sample;
+package xxxxxxxx_method_sample;
 
 import java.util.Scanner;
 

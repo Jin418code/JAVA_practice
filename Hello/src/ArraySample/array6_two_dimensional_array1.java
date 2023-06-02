@@ -1,6 +1,7 @@
 package ArraySample;
 
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class array6_two_dimensional_array1 {

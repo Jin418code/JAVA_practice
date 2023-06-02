@@ -1,4 +1,4 @@
-package inheritanceSample;
+package Calculate_example;
 
 public class CalDiver1 extends CalDiver2{
 	
