@@ -16,10 +16,10 @@ class Sample1_threadTest55 implements Runnable {
 	private String[] patients;
 
 	public Sample1_threadTest55(String[] patients) {
-        this.patients = patients;
-    }
+		this.patients = patients;
+	}
 
-	public void  treatPatients() {
+	public void treatPatients() {
 		for (int i = 0; i < patients.length; i++) {
 			String patient = patients[i];
 			try {
