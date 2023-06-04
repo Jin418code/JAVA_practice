@@ -75,18 +75,18 @@ package Book;
 
 // p540 [동기화를 사용하지 않았을 때 문제 발생]
 
-class MyData {
-	int data = 3;
-
-	public void plusData() {
-		int mydata = data;
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-		}
-		data = mydata + 1;
-	}
-}
+//class MyData {
+//	int data = 3;
+//
+//	public void plusData() {
+//		int mydata = data;
+//		try {
+//			Thread.sleep(2000);
+//		} catch (InterruptedException e) {
+//		}
+//		data = mydata + 1;
+//	}
+//}
 
 // 공유 객체를 사용하는 쓰레드 
 //class PlusThread extends Thread {
@@ -131,7 +131,7 @@ public class L15 {
 		Thread myThread = new Thread() {
 			@Override
 			public void run() {
-				for (long i = 0; i < 10L; i++) {
+				for (long i = 0; i < 10000000000000L; i++) {
 				}
 			}
 		};
