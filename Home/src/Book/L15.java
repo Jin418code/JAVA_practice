@@ -122,34 +122,83 @@ package Book;
 //}
 
 //p557 [쓰레드 상태(NEW, RUNNABLE, TERMINAED)]
+//public class L15 {
+//	public static void main(String[] args) {
+//		// 쓰레드 상태 저장 클래스
+//		Thread.State state;
+//
+//		// 1. 객체 생성(NEW)
+//		Thread myThread = new Thread() {
+//			@Override
+//			public void run() {
+//				for (long i = 0; i < 10000000000000L; i++) {
+//				}
+//			}
+//		};
+//
+//		state = myThread.getState();
+//		System.out.println("myThread state = " + state);
+//
+//		// 2. myThread 시작
+//		myThread.start();
+//		state = myThread.getState();
+//		System.out.println("myThread state = " + state);
+//
+//		// 3. myThread 종료
+//		try {
+//			myThread.join();
+//		} catch (InterruptedException e) {}
+//		state = myThread.getState();
+//		System.out.println("myThread state = " + state);
+//
+//	}
+//}
+
+// p573 [wait(), notify()를 이용한 쓰레드의 교차 실행]
+
+class DataBox {
+		boolean isEmpty = true;
+		int data;
+
+	synchronized void inputData(int data) {
+		if (!isEmpty) {
+			try { wait(); } catch (InterruptedException e) {} // Waiting
+		}
+		this.data = data;
+		isEmpty = false;
+		System.out.println("입력 데이터 : " + data);
+		notify();
+	}
+	
+	synchronized void outputData() {
+		if(isEmpty) {
+			try { wait(); } catch (InterruptedException e) {}
+		} 
+		isEmpty = true;
+		System.out.println("출력 데이터 : " + data);
+		notify();
+	}
+}
+
 public class L15 {
 	public static void main(String[] args) {
-		// 쓰레드 상태 저장 클래스
-		Thread.State state;
-
-		// 1. 객체 생성(NEW)
-		Thread myThread = new Thread() {
-			@Override
+		DataBox dataBox = new DataBox();
+		Thread t1 = new Thread() {
 			public void run() {
-				for (long i = 0; i < 10000000000000L; i++) {
+				for(int i = 1; i < 9; i++) {
+					dataBox.inputData(i);
 				}
-			}
+			};
 		};
-
-		state = myThread.getState();
-		System.out.println("myThread state = " + state);
-
-		// 2. myThread 시작
-		myThread.start();
-		state = myThread.getState();
-		System.out.println("myThread state = " + state);
-
-		// 3. myThread 종료
-		try {
-			myThread.join();
-		} catch (InterruptedException e) {}
-		state = myThread.getState();
-		System.out.println("myThread state = " + state);
-
+		
+		Thread t2 = new Thread() {
+			public void run() {
+				for(int i = 1; i < 9; i++) {
+					dataBox.outputData();
+				}
+			};
+		};
+		t1.start();
+		t2.start();
 	}
 }

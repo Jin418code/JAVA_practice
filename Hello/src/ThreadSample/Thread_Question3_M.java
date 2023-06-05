@@ -14,44 +14,47 @@ package ThreadSample;
 import java.lang.InterruptedException;
 import java.util.Scanner;
 
-class ThreadTest1_Sample6 extends Thread {
+class ThreadTest1_Sample6 implements Runnable {
 
 	Scanner sc = new Scanner(System.in);
-
 	private boolean keepGoing = true;
+	private Thread mainThread;
+	private int answer;
+
+	public void setMainThread(Thread mainThread) {
+		this.mainThread = mainThread;
+	}
+
+	public void stop() {
+		keepGoing = false;
+	}
+
+	public int getAnswer() {
+		return answer;
+	}
+
+	@Override
+	public void run() {
+		while (keepGoing) {
 
 			int num1 = (int) ((Math.random() * 9) + 1);
 			int num2 = (int) ((Math.random() * 9) + 1);
-			int comAnswer = num1 * num2;
-
 			System.out.println(num1 + " * " + num2 + " = " + "?");
+			answer = num1 * num2;
 
-			int inputAnswer = sc.nextInt();
-			String exitCode = sc.nextLine();
-
-				@Override
-				public void run() {
-					while (keepGoing) {
-						
-					try {
-						Thread.sleep(3000);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-						System.out.println("시간 초과");
-						Thread.currentThread().interrupt();
-					}
-				}
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			
-
-	public boolean checking(String asnwer) {
-		int numAnswer;
-		try {
-			input = Integer.parseInt(answer);
-		} catch (NumberFormatException e) {
-			return false;
+			if (keepGoing) {
+				System.out.println("시간 초과");
+			}
 		}
+		mainThread.interrupt();
 	}
-}}}
+}
 
 public class Thread_Question3_M {
 
@@ -59,29 +62,39 @@ public class Thread_Question3_M {
 
 		Scanner sc = new Scanner(System.in);
 
-		ThreadTest1_Sample6 thread = new ThreadTest1_Sample6();
+		ThreadTest1_Sample6 runnable = new ThreadTest1_Sample6();
+		Thread thread = new Thread(runnable);
+		runnable.setMainThread(thread);
+
 		thread.start();
+		System.out.println("3초 안에 답을 입력해주세요 / 종료는 'Exit'를 입력해주세요");
 
 		while (true) {
-			System.out.println("3초 안에 답을 입력해주세요 / 종료는 'Exit'를 입력해주세요");
-
 			String inputAnswer = sc.nextLine();
+
 			if (inputAnswer.equalsIgnoreCase("Exit")) {
+				runnable.stop();
+				System.out.println("종료되었습니다");
 				break;
 			}
 
-			boolean correct = thread.checking(inputAnswer);
-			if (correct) {
-				System.out.println("정답입니다");
-			} else {
-				System.err.println("오답입니다");
-			}
-
 			try {
-				thread.join();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+				int input = Integer.parseInt(inputAnswer);
+				int comAnswer = runnable.getAnswer();
+
+				if (input == comAnswer) {
+					System.out.println("정답입니다");
+				} else {
+					System.out.println("오답입니다");
+				}
+			} catch (NumberFormatException e) {
+				System.out.println("정수를 입력해주세요");
 			}
+		}
+		try {
+			thread.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 }
