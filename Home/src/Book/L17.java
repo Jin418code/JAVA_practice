@@ -196,4 +196,5 @@ class MyClass {
 
 class MyComparableClass implements Comparable<MyComparableClass> {
 	
+	int dataIn;
 }
