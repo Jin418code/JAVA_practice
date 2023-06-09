@@ -194,7 +194,7 @@ class MyClass {
 	}
 }
 
-class MyComparableClass implements Comparable<MyComparableClass> {
+abstract class MyComparableClass implements Comparable<MyComparableClass> {
 	
 	int dataIn;
 }
