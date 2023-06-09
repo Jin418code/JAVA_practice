@@ -23,7 +23,7 @@ class dbtest {
 			} catch (SQLException e1) {
 			}
 		}8
-	}
+	}1
 }
 
 public class connectionTest2 {
