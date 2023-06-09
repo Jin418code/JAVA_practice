@@ -25,6 +25,7 @@ public class L18 {
 
 		A a1 = new A() {
 
+			public int aa = 0;
 			@Override
 			public void method1() {
 				System.out.println("입력 x 리턴 x 함수");
