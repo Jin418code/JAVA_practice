@@ -22,8 +22,8 @@ class dbtest {
 				conn.close();
 			} catch (SQLException e1) {
 			}
-		}8
-	}1
+		}
+	}
 }
 
 public class connectionTest2 {
