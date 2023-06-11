@@ -24,7 +24,8 @@ public class L18 {
 		// 1-1. 익명 이너 클래스 방식
 
 		A a1 = new A() {
-
+			
+			public int bb = 0;
 			public int aa = 0;
 			@Override
 			public void method1() {
